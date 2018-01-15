@@ -1,0 +1,31 @@
+{#
+ # Layout template
+ # ---------------
+ #
+ #}
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <title>Offshore Studio</title>
+   <link rel="stylesheet" href="assets/css/main.css">
+ </head>
+ <body>
+
+     <header>
+         {% block header %}{% endblock %}
+     </header>
+
+     <main>
+         {% block content %}{% endblock %}
+     </main>
+
+
+     {# JS #}
+     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+     <script src="assets/js/all.js"></script>
+
+ </body>
+ </html>

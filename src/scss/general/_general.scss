@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  width: 100vw;
+  background: $background;
+  overflow-x: hidden;
+  font-family: $text;
+  color: $text-color;
+}
+
+
+.hidden {
+  display: none;
+}

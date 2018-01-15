@@ -1,0 +1,7 @@
+<div class="main-carousel">
+    {% for project in projects %}
+        <div class="carousel-cell">
+            <img src="img/{{ project.src }}.jpg" alt="{{ project.title }}">
+        </div>
+    {% endfor %}
+</div>
