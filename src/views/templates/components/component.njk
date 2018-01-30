@@ -1,0 +1,22 @@
+{% macro box(creator, type, title, img, index) %}
+
+{% set href =  "./project_" + index + ".html" %}
+
+    <li>
+        <a class="project-overview-item" href="{{ href }}">
+
+            <div class="img-container">
+                <img class="project-img" src="{{ img }}" alt="{{ title }}">
+                <div class="img-overlay"></div>
+            </div>
+
+            <h2 class="project-title">{{ title }}</h2>
+
+            <div class="project-creator-and-type">
+                <div class="project-creator">{{ creator }}</div>
+                <div class="project-type">[{{ type }}]</div>
+            </div>
+
+        </a>
+    </li>
+{% endmacro %}

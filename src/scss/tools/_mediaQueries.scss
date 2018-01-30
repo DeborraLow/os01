@@ -7,3 +7,10 @@
         @content;
     }
 }
+
+
+@mixin bp-portrait() {
+    @media only screen and (orientation: portrait) {
+        @content;
+    }
+}

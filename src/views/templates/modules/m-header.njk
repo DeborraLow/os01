@@ -1,23 +1,30 @@
 <div class="header-title">
     <h1>Offshore studio</h1>
+
+    <button type="button" name="menu" class="toggle-menu-button js-toggle-menu">
+        <div class="icon"></div>
+    </button>
 </div>
 
-<div class="header-info">
-
-    <a href="heaven@offshorestudio.ch">heaven@offshorestudio.ch</a>
+<div class="header-info js-menu">
+    <a href="mailto:heaven@offshorestudio.ch" class="js-hover-trigger menu-item">HEAVEN@OFFSHORESTUDIO.CH</a>
 
     <nav>
         <ul>
             <li>
-                <a href="#index">index</a>
+                <a class="active js-close-information js-hover-trigger menu-item" href="#index">INDEX</a>
+                <span class="hidden-bps">, </span>
             </li>
             <li>
-                <a href="#information">information</a>
+                <a class="js-open-information js-hover-trigger menu-item" href="#information">INFORMATION</a>
             </li>
         </ul>
     </nav>
 
-    <div class="header-spinner">
-
+    <div class="header-ticker">
+        <div class="ticker--first"> S&P <span class="stock-sp">0.00%</span> DOW JONES <span class="stock-dj">0.00%</span> GOLD <span class="stock-gold">0.00%</span> OIL <span class="stock-oil">0.00%</span> NASDAQ <span class="stock-nasdaq">0.00%</span> </div>
+        <div class="ticker--second">S&P <span class="stock-sp">0.00%</span> DOW JONES <span class="stock-dj">0.00%</span> GOLD <span class="stock-gold">0.00%</span> OIL <span class="stock-oil">0.00%</span> NASDAQ <span class="stock-nasdaq">0.00%</span></div>
     </div>
 </div>
+
+ <div class="intro-border"></div>

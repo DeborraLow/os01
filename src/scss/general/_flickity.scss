@@ -43,6 +43,12 @@ http://flickity.metafizzy.co
 }
 
 /* ---- previous/next buttons ---- */
+.touch {
+    .flickity-prev-next-button {
+        display: none;
+    }
+}
+
 
 .flickity-prev-next-button {
   position: absolute;
@@ -50,15 +56,20 @@ http://flickity.metafizzy.co
   width: 50%;
   height: 100%;
   border: none;
-  cursor: pointer;
   background-color: transparent;
+
+  &.previous {
+      cursor: url('../img/cursor/arrow_prev.png') 1 22, pointer;
+  }
+
+  &.next {
+      cursor: url('../img/cursor/arrow_next.png') 69 22, pointer;
+  }
 
   svg {
       display: none;
   }
 }
-
-
 
 
 .flickity-prev-next-button.previous { left: 0; }

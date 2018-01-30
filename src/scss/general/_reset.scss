@@ -4,3 +4,23 @@ a {
 
   &:hover, &:visited { color: inherit; }
 }
+
+
+h1, h2, ul, dl {
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+}
+
+
+address {
+    font-style: normal;
+}

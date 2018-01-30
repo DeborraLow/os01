@@ -1,0 +1,141 @@
+$text-intro-duration: 2s;
+
+header {
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    height: $header-h;
+    background: $header-background;
+    text-transform: uppercase;
+    animation: showBorder 0.1s 2.8s;
+
+    @include bp-s {
+        height: auto;
+    }
+}
+
+
+@keyframes borderIntro {
+    0% { height: 0; }
+    10% { height: 0; }
+    100% { height: $header-h; }
+}
+
+
+@keyframes textIntro {
+    0% {
+        opacity: 0;
+
+     }
+    50% {
+        opacity: 0;
+
+    }
+    100% {
+        opacity: 1;
+
+    }
+}
+
+.header-title {
+    float: left;
+    height: $header-h;
+    width: $header-title-w;
+    padding: $margin;
+    border-right: $border-w solid $border-color;
+    font-size: $title-font-size;
+    animation: borderIntro 0.2s forwards ease-in;
+
+    @include bp-s {
+        float: none;
+        position: relative;
+        width: 100%;
+        height: $header-h-bps;
+        border-right: 0;
+        font-size: $title-font-size-bps;
+        border-bottom: $border-w solid $border-color;
+        animation: none;
+    }
+
+    h1 {
+        transform: translateY(-13%);
+        animation: textIntro $text-intro-duration ease-in;
+    }
+}
+
+
+.header-info {
+    position: relative;
+    float: left;
+    height: $header-h;
+    width: $header-info-w;
+    padding: $margin;
+    font-size: $nav-font-size;
+    animation: textIntro $text-intro-duration ease-in;
+
+    @include bp-s {
+        float: none;
+        display: none;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        font-size: $nav-font-size-bps;
+        animation: none;
+    }
+
+    &.open {
+        display: block;
+    }
+
+    .active {
+        cursor: default;
+    }
+}
+
+
+.header-ticker {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 300%;
+    height: 1.4 * $nav-font-size;
+    overflow: hidden;
+    background: black;
+    color: white;
+
+    @include bp-s {
+        display: none;
+    }
+
+    span {
+        padding-right: 5px;
+    }
+
+}
+
+
+@keyframes tickerFirst {
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes tickerSecond {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
+}
+
+
+.ticker--first {
+    position: absolute;
+    left: 0;
+    //background: red;
+    animation: tickerFirst 7s infinite linear;
+}
+
+.ticker--second {
+    position: absolute;
+    left: 0;
+    transform: translateX(100%);
+    //background: blue;
+    animation: tickerSecond 7s infinite linear;
+}

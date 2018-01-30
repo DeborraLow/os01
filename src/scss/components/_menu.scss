@@ -1,0 +1,95 @@
+.menu-item {
+    @include bp-s {
+        display: block;
+        width: 100vw;
+        height: calc(#{$nav-font-size-bps} * 1.2 + #{$margin} * 2);
+        padding: $margin;
+        line-height: $nav-font-size-bps * 1.2;
+        border-bottom: $border-w solid $border-color;
+    }
+
+    &.active {
+        @include bp-s {
+            background: black;
+            color: white;
+        }
+    }
+}
+
+
+.toggle-menu-button {
+    display: none;
+    position: absolute;
+    right: $gutter;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    outline: 0;
+    border: 0;
+    padding: 0;
+
+    @include bp-s {
+        display: block;
+    }
+}
+
+$menu-line-h: 2px;
+.toggle-menu-button{
+    width: $title-font-size-bps * 1.5;
+    height: $title-font-size-bps * 1.5;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+
+  .icon {
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+        position: absolute;
+        height: $menu-line-h;
+        width: $title-font-size-bps * 1.5;
+        top: $title-font-size-bps * 1.5 / 2;
+        background-color: #000;
+
+        &:before{
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+            position: absolute;
+            width: $title-font-size-bps * 1.5;
+            height: $menu-line-h;
+            background-color: #000;
+            content: "";
+            top: calc(#{$title-font-size-bps} * 1.5 / -3);
+            left: 0;
+        }
+
+        &:after{
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+            position: absolute;
+            width: $title-font-size-bps * 1.5;
+            height: $menu-line-h;
+            background-color: #000;
+            content: "";
+            top: calc(#{$title-font-size-bps} * 1.5 / 3);
+            left: 0;
+        }
+    }
+
+    &.open {
+      .icon {
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+        background: transparent;
+
+            &:before{
+                transform-origin: left top;
+                transform: rotateZ(45deg);
+
+            }
+
+            &:after{
+                transform-origin: left bottom;
+                transform: rotateZ(-45deg);
+            }
+      }
+    }
+  }

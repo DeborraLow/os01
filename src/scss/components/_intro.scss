@@ -1,0 +1,46 @@
+.intro-cover {
+    z-index: 3;
+    background: $header-background;
+    height: $slider-h;
+    position: absolute;
+    top: $header-h;
+    width :100vw;
+    animation: fadeOut 3s ease-in forwards;
+    //pointer-events: none;
+
+    @include bp-s {
+        height: $slider-h-bps;
+    }
+}
+
+
+@keyframes fadeOut {
+    0%   { opacity: 1; }
+    66%  { opacity: 1; }
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.intro-border {
+    z-index: 5;
+    position: absolute;
+    top: calc(#{$header-h} - #{$border-w});
+    height: $border-w;
+    background: $border-color;
+    width: 100vw;
+    transform-origin: $header-title-w;
+    transform: scaleX(0);
+    animation: stretch 1.3s forwards ease-in 0.2s;
+
+    @include bp-s {
+        top: calc(#{$header-h-bps} - #{$border-w});
+        transform-origin: 50%;
+    }
+}
+
+@keyframes stretch {
+    0%   { transform: scaleX(0); }
+    100% { transform: scaleX(1);}
+}

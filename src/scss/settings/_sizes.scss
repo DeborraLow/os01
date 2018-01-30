@@ -1,3 +1,30 @@
 /*------------------------------------*\
   #SIZES
 \*------------------------------------*/
+
+//FONT SIZES
+$title-font-size: 1.7vw;
+$text-font-size: 1.4vw;
+$nav-font-size: 1vw;
+$small-font-size: 0.8vw;
+
+$title-font-size-bps: 3.5vw;
+$text-font-size-bps: 4vw;
+$nav-font-size-bps: 3.5vw;
+$small-font-size-bps: 3vw;
+
+
+$gutter: 12px;
+$margin: $gutter;
+
+$header-h: 9.8vh;
+$slider-h: 100vh - $header-h; //needs to be updated in slider.js - sliderHToWindowHRatio
+
+$header-h-bps: calc(#{$margin} * 2 + #{$title-font-size-bps} * 1.5);
+$slider-h-bps: calc(100vh - (#{$margin} * 2 + #{$title-font-size-bps} * 1.5));
+
+$header-title-w: calc((100% - 9 * #{$gutter}) / 8  * 5 + 5.5 * #{$gutter});
+$header-info-w:  calc((100% - 9 * #{$gutter}) / 8  * 3 + 3.5 * #{$gutter});
+$information-bottom-w: calc((100% - 9 * #{$gutter}) / 8  * 2 + 2 * #{$gutter});
+
+$border-w: 2px;

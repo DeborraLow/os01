@@ -4,8 +4,10 @@
 
 
 body {
-  width: 100vw;
-  background: $background;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  background: white;
   overflow-x: hidden;
   font-family: $text;
   color: $text-color;
@@ -14,4 +16,11 @@ body {
 
 .hidden {
   display: none;
+}
+
+
+.hidden-bps {
+    @include bp-s {
+        display: none;
+    }
 }

@@ -1,0 +1,19 @@
+.text-hover {
+    display: none;
+    position: fixed;
+    top: $header-h;
+    left: 0;
+    color: white;
+    mix-blend-mode: exclusion;
+    top: calc(#{$header-h} + #{$slider-h} / 2);
+    transform: translateY(-50%);
+    text-align: center;
+    pointer-events: none;
+    font-size: 70vw;
+    font-size: 90vh;
+
+
+    &.active {
+        display: block;
+    }
+}

@@ -1,0 +1,127 @@
+.information {
+    display: none;
+    position: absolute;
+    top: $header-h;
+    min-height: calc(100vh - #{$header-h});
+    width: 100%;
+    transform: translateY($slider-h);
+    background: $information-background;
+    transition: transform 0.3s 0.1s;
+
+    @include bp-s {
+        top: calc(#{$header-h-bps} - #{$border-w});
+        padding-top: $margin;
+    }
+
+    &.open{
+        transform: translateY(0);
+    }
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    dt, dd {
+        float: left;
+    }
+
+    dt {
+        width: 20%;
+
+        @include bp-s {
+            width: 10%;
+        }
+    }
+
+    dd {
+        width: 80%;
+        margin: 0;
+
+        @include bp-s {
+            width: 90%;
+        }
+    }
+
+    dl {
+        margin-bottom: 1em;
+
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+}
+
+
+.side-left {
+    float: left;
+    width: $header-title-w;
+    padding: $margin;
+    padding-top: 0;
+    font-size: $text-font-size;
+
+    @include bp-s {
+        width: 100%;
+        font-size: $text-font-size-bps;
+    }
+
+    p {
+        margin: 0 0 1em 0;
+    }
+}
+
+
+.side-right {
+    float: left;
+    width: $header-info-w;
+    padding: $margin;
+    padding-top: 0;
+    column-count: 3;
+    font-size: $small-font-size;
+
+    @include bp-s {
+        width: 100%;
+        column-count: 1;
+        font-size: $small-font-size-bps;
+    }
+
+    h2 {
+        font-size: $small-font-size;
+
+        @include bp-s {
+            font-size: $small-font-size-bps;
+        }
+    }
+
+    li {
+        display: block;
+    }
+}
+
+
+.information-bottom {
+    position: fixed;
+    display: block;
+    bottom: $gutter;
+    left: $gutter;
+    width: $information-bottom-w;
+
+    &.col-2 {
+        left:  $information-bottom-w;
+
+        @include bp-s {
+            left: auto;
+        }
+    }
+
+    @include bp-s {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        width: 100%;
+    }
+
+}

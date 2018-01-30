@@ -1,25 +1,161 @@
+.flickity-viewport {
+    height: $slider-h;
+
+    @include bp-s {
+        height: $slider-h-bps;
+    }
+}
+
+
+.carousel-wrapper {
+    position: fixed;
+    top: $header-h;
+    width: 100%;
+
+    @include bp-s {
+        top: $header-h-bps;
+    }
+}
+
+
 .main-carousel {
     width: 100%;
-    height: 80vh;
+    height: $slider-h;
+
+    @include bp-s {
+        height: $slider-h-bps;
+    }
 }
 
 
 .carousel-cell {
     height: 100%;
     overflow: hidden;
+    border-left: $border-w solid white;
+
+    @include bp-portrait {
+        width: 100vw;
+    }
+
+
+    &.carousel-cell-702 {
+        width: 0.702 * $slider-h;
+    }
+
+    &.carousel-cell-771 {
+        width: 0.771 * $slider-h;
+    }
+
+    &.carousel-cell-1226 {
+        width: 1.226 * $slider-h;
+    }
+
+    &.carousel-cell-1325 {
+        width: 1.325 * $slider-h;
+    }
+
+    &.carousel-cell-1335 {
+        width: 1.335 * $slider-h;
+    }
+
+    &.carousel-cell-1372 {
+        width: 1.372 * $slider-h;
+    }
+
+    &.carousel-cell-1408 {
+        width: 1.408 * $slider-h;
+    }
+
+    &.carousel-cell-1429 {
+        width: 1.429 * $slider-h;
+    }
+
+    &.carousel-cell-1452 {
+        width: 1.452 * $slider-h;
+    }
+
+    &.carousel-cell-1471 {
+        width: 1.471 * $slider-h;
+    }
+
+    &.carousel-cell-1482 {
+        width: 1.482 * $slider-h;
+    }
+
+    &.carousel-cell-1500 {
+        width: 1.5 * $slider-h;
+    }
+
+    &.carousel-cell-1508 {
+        width: 1.508 * $slider-h;
+    }
+
+    &.carousel-cell-1518 {
+        width: 1.518 * $slider-h;
+    }
+
+    &.carousel-cell-1568 {
+        width: 1.568 * $slider-h;
+    }
+
+    &.carousel-cell-1688 {
+        width: 1.688 * $slider-h;
+    }
+
+    &.is-selected:after {
+        background: black;
+    }
+
+    &:after {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background: rgb(120, 120, 120);
+    }
 
     img {
-        width: auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         height: 100%;
-        filter: invert(100%);
-        filter: hue-rotate(90deg);
-        transition: filter 0.5s;
     }
 
-    &.is-selected {
+    &.hover:not(.is-selected) {
         img {
-            //filter: invert(0%);
-            filter: hue-rotate(0deg);
+            mix-blend-mode: color-burn;
+            filter: saturate(500%) invert(100%);
+
         }
     }
+
 }
+
+
+.carousel-counter {
+    position: absolute;
+    bottom: $gutter;
+    right: 10vw;
+    color: $carousel-counter-color;
+}
+
+
+    //1
+    //mix-blend-mode: color-burn;
+    // filter: saturate(500%) invert(100%);
+
+
+    //2
+    // mix-blend-mode: difference;
+    // filter: invert(100%);
+
+    //3
+    // mix-blend-mode: difference;
+    // filter: saturate(500%) hue-rotate(180deg);
+
+    //4
+    // mix-blend-mode: color;
+    // filter: saturate(200%) invert(100%);

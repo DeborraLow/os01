@@ -1,0 +1,61 @@
+{# CONDITIONAL #}
+{% if item.type == "halfImage" %}
+
+{% elseif item.type == "text" %}
+
+{% endif %}
+
+
+{# LOOP #}
+{% for item in gallery %}
+{% endfor %}
+
+{% for user in users if user.active %}
+    <li>{{ user.username|e }}</li>
+{% endfor %}
+
+loop.index	     The current iteration of the loop. (1 indexed)
+loop.index0	     The current iteration of the loop. (0 indexed)
+loop.revindex	 The number of iterations from the end of the loop (1 indexed)
+loop.revindex0	 The number of iterations from the end of the loop (0 indexed)
+loop.first	     True if first iteration
+loop.last	     True if last iteration
+loop.length	     The number of items in the sequence
+loop.parent	     The parent context
+
+
+{# VARIABLE #}
+{% set prevWasHalf = false %}
+
+
+{# BACKGROUND IMG #}
+{% set backgroundImg = 'background-image: url(' ~ item.fullImage.first().url ~ ');'  %}
+<div style = "{{ backgroundImg }}"></div>
+
+
+
+
+{# FILTERS #}
+{# LENGTH #}
+{% if users|length > 10 %}
+    ...
+{% endif %}
+
+
+{# CAPITALIZE #}
+{{ 'my first car'|capitalize }}
+
+
+{# REPLACE #}
+{{ "I like %this% and %that%."|replace({'%this%': foo, '%that%': "bar"}) }}
+
+
+
+
+{# TAGS #}
+{# INCLUDE #}
+{# template.html will have access to the variables from the current context and the additional ones provided #}
+{% include 'template.html' with {'foo': 'bar'} %}
+
+{% set vars = {'foo': 'bar'} %}
+{% include 'template.html' with vars %}
